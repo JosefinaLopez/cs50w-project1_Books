@@ -1,0 +1,22 @@
+{%extends "layout.html"%}
+{%block main%}
+<title>Index</title>
+<div class="container-index">
+  <div class="img-index">
+    <img src="/static/img/img-book2.png" class='img-in'>
+  </div>
+  <div class="text-index">
+    <h5 style='color:rgb(25, 25, 187); font-size: x-large; '>Welcome to Books {{user}}</h5>
+    <figure>
+      <blockquote class="blockquote">
+        <p>"If you don't like to read, it's because you haven't found the right book yet"</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Unknown <cite title="Source Title"></cite>
+      </figcaption>
+    </figure>
+    <a href="/search">Search Books</a>
+  </div>
+</div>
+
+{%endblock%}

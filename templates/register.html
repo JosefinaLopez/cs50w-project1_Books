@@ -1,0 +1,63 @@
+{%extends "layout.html"%}
+{%block main%}
+<title>Register</title>
+<style>
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.video-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+.formlogin{
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+</style>
+<div class="video-container">
+  <video autoplay muted loop id="video-background">
+    <source src="/static/img/book.mp4" type="video/mp4">
+    Tu navegador no admite la reproducción de videos.
+  </video>
+
+    <div class="formlogin">
+        <form action="/register" method="post">
+            <label class="log">Register</label>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Username" id='texbox' name="Username">
+              </div>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password" id='texbox' name="Password">
+              </div>
+              <div class="col">
+                <input type="password" class="form-control" placeholder="Password Confirm" id='texbox' name="PasswordConfirm">
+              </div>
+              <div class="btn">
+                <button type="submit" id='uwuxd' class="btn btn-primary">Register</button>
+              </div>
+              <div class="registerfooter">
+                <a>Do you already have an account?</a>
+                <a href="/login">Log In</a>
+              </div>
+        </form>
+        
+    </div>
+</div>
+{%endblock%}

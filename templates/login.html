@@ -1,0 +1,60 @@
+{%extends "layout.html"%}
+{%block main%}
+<title>Login</title>
+<style>
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .video-container {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  #video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .formlogin {
+    display: flex;
+    justify-content: center;
+    z-index: 1;
+  }
+</style>
+  <div class="video-container">
+    <video autoplay muted loop id="video-background">
+      <source src="/static/img/book.mp4" type="video/mp4">
+      Tu navegador no admite la reproducción de videos.
+    </video>
+    <div class="formlogin">
+        <form action="/login" method='post'>
+          <label class="log">Login</label>
+          <div class="col">
+              <input type="text" class="form-control" placeholder="Username" id='texbox' name="Username" required>
+            </div>
+            <div class="col">
+              <input type="password" class="form-control" placeholder="Password" id='texbox' name="Password" required>
+            </div>
+            <div class="btn">
+              <button type="submit" id='uwuxd' class="btn btn-primary">Login</button>
+            </div>
+            <div class="loginfoter">
+              <a>Don't have an account? create one from here</a>
+              <a href="/register">Register</a>    
+            </div>
+        </form>      
+    </div>
+
+{%endblock%}

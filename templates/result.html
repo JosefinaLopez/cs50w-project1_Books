@@ -1,0 +1,19 @@
+{%extends "layout.html"%}
+{%block main%}
+<title>Resultados</title>
+<div class="result-container">
+  {%for row in busq%}
+  <div class="card" id='card' style="max-width: 25rem;">
+    <a href="/books/{{row[0]}}" style='text-decoration: none;'>
+    <div class="card-header">{{row[1]}}</div>
+    <div class="card-body">
+      <h5 class="card-title">Isbn: {{row[0]}}</h5>
+      <h6 class='card-text'>Author: {{row[2]}}</h6>
+      <h6 class='card-text'>Year: {{row[3]}}</h6>
+    </div>
+  </a>
+  </div>
+  {%endfor%}     
+</div>
+{%endblock%}
+
