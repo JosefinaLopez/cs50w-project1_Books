@@ -24,7 +24,6 @@ puede hacerse una vez.
 ![Alt text](static/img-readme/image-6.png)
 
 
-
 ### Nota 1
 Debido a que la base de datos esta alojada en render y aveces la conexion es un poco inestable, 
 si aparece este error, solamente recarga la pagina.
@@ -36,5 +35,7 @@ Para probar La API  con los datos correspondientes, pedidos en los requisitos de
 
 ### Nota 3
 Para ejecutar el programa solo ponga en consola 
-> <Python application.py
+`Python application.py`
+
+> Josefina Lopez 
 

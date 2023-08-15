@@ -7,16 +7,15 @@ function  calificar(item)
   
   for (let index = 0; index < 5; index++) 
   {
-     if(index<contador)
-     {
-       document.getElementById((index+1)+nombre).style.color="orange";
-      }
+      if(index<contador)
+      {
+        document.getElementById((index+1)+nombre).style.color="orange";
+        }
       else{
         document.getElementById((index+1)+nombre).style.color="black";
       }
   }
     SendStars(contador)
-   
 }
 async function SendStars(contador){
   const getInput = document.querySelector('[name="stars"]')
