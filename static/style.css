@@ -38,7 +38,20 @@ li:hover, i:hover{
     left: 0;
     width: 100%;
     height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    overflow: auto;
     /*z-index: 9999;*/
+}
+.book-info{
+    grid-area: 1 / 1 / 2 / 2;
+}
+.booksxd{
+    grid-area: 1 / 2 / 2 / 3;
+}
+.book-info,.booksxd{
+    display: flex;
+    justify-content: center;
 }
 #uwuxd{
     background-color:#0e3876;
@@ -75,10 +88,11 @@ li:hover, i:hover{
 }
 .escribir-opinion{
     position: absolute;
-    left: 121px;
+    left: 46rem;
     width: 400px;
-    top: 28rem;
+    top: 23rem;
     text-align: center;
+    padding: 42px;
 }
 .container-index{
     margin-top: 7%;
@@ -92,13 +106,12 @@ li:hover, i:hover{
     width:650px;
 }
 .book-img{
-    position: inherit;
+    position: relative;
     background-color: rgba(0, 0, 0, 0.342);
     height: 300px;
     width: 300px;
     border-radius: 5%;
-    left: 180px;
-    top: 100px;
+    top: 4rem;
 }
 #info{
     position:absolute;
@@ -106,9 +119,12 @@ li:hover, i:hover{
     background-color: rgb(255, 255, 255);
     text-align: center;
     width: 700px;
+    height: 350px;
     border-radius: 2%;
     right:80px;
+    overflow: overlay;
     top: 55px;
+
 }
 #xd1:hover, #xd2:hover, #xd3:hover{
     cursor: pointer;
@@ -126,8 +142,8 @@ li:hover, i:hover{
 }
 .info-raiting{
     position: absolute;
-    bottom: -8rem;
-    left: 280px;
+    bottom: 9rem;
+    left: 283px;
     text-align: center;
 
 }
@@ -199,13 +215,6 @@ li:hover, i:hover{
     text-align: center;
     background-color: rgba(0, 0, 0, 0.651);
 }
-.escribir-opinion{
-    position: absolute;
-    left: 121px;
-    width: 400px;
-    top: 25rem;
-    text-align: center;
-}
 #texbox , .textbox-comentario{
 background-color: white;
 border-radius: 50px;
@@ -216,5 +225,86 @@ font{
     bottom: 4px;
     padding: 10px; 
 }
+
+/* Estilos para pantallas más pequeñas (móviles) */
+@media (max-width: 767px) {
+    /* Aplicar estilos aquí */
+    .formlogin{
+    position: fixed;
+    top: 28%;
+    left: 7%;
+    width: 330px;
+    }
+    .container-index{
+    margin-top: 20%;
+    padding: 15px;
+    grid-template-columns:none;
+    }
+    .a-xd{
+    justify-content: center;
+    display: flex;
+    background: mediumpurple;
+    text-decoration: none;
+    color: white;
+    border-radius: 30px;
+    }
+    .container{
+        left: 1%;
+        margin-top: 60%;
+        max-width:340px;
+        position: relative;
+    }
+    .img-in{
+        width: 350px;
+    }
+    #TextboxSearch{
+    width: 300px;
+    border-color:#780dfd;
+    }
+    .btnsearch{
+        top: 6px;;
+    }
+    .result-container{
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 5%;
+    }
+    .escribir-opinion{
+    left: -2%;
+    padding: 14px;
+    top: 53rem;
+    }
+    .book-img{
+    left: 11%;
+    position: absolute;
+    top: 84px;
+    }
+    .book-container{
+    display: grid;
+    overflow: auto;
+    position: absolute;
+    }
+    .info-raiting{
+    position: absolute;
+    bottom: 12rem;
+    left: 159px;
+    }
+    #info{
+    width: 100%;
+    left: 0;
+    top: 30rem;
+    border: none;
+    padding: 20px;
+    box-shadow: none;
+    }
+    .nc{
+        top: 35rem;
+        width: 90%;
+    }
+}
+
 
 

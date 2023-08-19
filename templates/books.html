@@ -3,45 +3,51 @@
 <title>Books</title>
 <div class="book-container">
 
-    <div class="book-img">
-        <img src="{{dato[3]}}" class="img-portada">
-    </div>
-    <div class="card" id='info' style='color:black; background-color:white;'>
-        <h1>{{query_books[1]}}</h1>
-        <h6>ISBN {{query_books[0]}}</h6>
-        <p>informacion {{dato[2]}}</p>
-        <h6>Author {{query_books[2]}}</h6>
-        <h6>{{query_books[3]}}</h6>
-    </div>
-    <div class="info-raiting">
-        <h6><i class="bi bi-eye-fill" style='color:blue;'></i>{{dato[1]}}</h6>
-        <h6>Puntuacion</h6>
-        <!---Estrellas  info de la API oseal, la calificacion xd-->
-        {%for star in star%}
-        <span class='estrellas'><i class="bi bi-star-fill" style='color:orange;'></i></span>
+<div class="book-info">
+  <div class="book-img">
+      <img src="{{dato[3]}}" class="img-portada">
+  </div>
+  
+  <div class="info-raiting">
+      <h6><i class="bi bi-eye-fill" style='color:blue;'></i>{{dato[1]}}</h6>
+      <h6>Puntuacion</h6>
+      <!---Estrellas  info de la API oseal, la calificacion xd-->
+      {%for star in star%}
+      <span class='estrellas'><i class="bi bi-star-fill" style='color:orange;'></i></span>
+    {%endfor%}
+    {%if puntuacion == 3.5 or puntuacion == 4.5 or puntuacion == 2.5%}
+      <span><i class="bi bi-star-half" style='color:rgb(255, 166, 0);'></i></span>
+    {%endif%}
+  </div>
+</div>
+
+<div class="booksxd">
+  <div class="card" id='info' style='color:black; background-color:white;'>
+      <h1>{{query_books[1]}}</h1>
+      <h6>ISBN {{query_books[0]}}</h6>
+      <p>informacion {{dato[2]}}</p>
+      <h6>Author {{query_books[2]}}</h6>
+      <h6>{{query_books[3]}}</h6>
+  </div>
+  <div class="escribir-opinion">
+    <div class="califica" style='padding:5%;'>
+      <h5>Califica tu experiencia</h5>
+      <!--Estrellas de usuarios que ya calificaron-->
+      {%for coment_stars in coment_stars%}
+      <span class='estrellas'><i class="bi bi-star-fill" style='color:rgb(255, 166, 0);'></i></span>
       {%endfor%}
-      {%if puntuacion == 3.5 or puntuacion == 4.5 or puntuacion == 2.5%}
-        <span><i class="bi bi-star-half" style='color:rgb(255, 166, 0);'></i></span>
-      {%endif%}
-    </div>
-    <div class="escribir-opinion">
-      <div class="califica" style='padding:5%;'>
-        <h5>Califica tu experiencia</h5>
-        <!--Estrellas de usuarios que ya calificaron-->
-        {%for coment_stars in coment_stars%}
-        <span class='estrellas'><i class="bi bi-star-fill" style='color:rgb(255, 166, 0);'></i></span>
-        {%endfor%}
-        <!--Funcion Click para calificar estrellas-->
-        {%if coment_stars |length == 0%}
-        <span id ="1star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
-        <span id ="2star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
-        <span id ="3star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
-        <span id ="4star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
-        <span id ="5star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
-        {%endif%} 
-      </div>   
-          <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-chat-fill"></i></button>
-    </div>
+      <!--Funcion Click para calificar estrellas-->
+      {%if coment_stars |length == 0%}
+      <span id ="1star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
+      <span id ="2star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
+      <span id ="3star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
+      <span id ="4star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
+      <span id ="5star" onclick='calificar(this)'class='star'><i class="bi bi-star"></i></span>
+      {%endif%} 
+    </div>   
+        <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"><i class="bi bi-chat-fill"></i></button>
+  </div>
+</div>
 
     <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
       <div class="offcanvas-header">
