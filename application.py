@@ -154,7 +154,7 @@ def book(isbn):
             y+=1  
             coment_stars.append(y)
 
-
+    puntuacion = None
     if rows == None:
         flash("Isbn no encontrado")
         return render_template("result.html")
@@ -167,6 +167,7 @@ def book(isbn):
             img = book["volumeInfo"]["imageLinks"]["thumbnail"]
             des = book["volumeInfo"]["description"]
             user = session["username"]
+            print(puntuacion)
             dato.append(puntuacion)
             dato.append(vistas)
             dato.append(des)
@@ -211,19 +212,27 @@ def book(isbn):
         
     star = []
     x = 1.0    
-            #Se muestra el resultado del libro buscado
-    while(x <= puntuacion):
-                estrellass = []
-                estrellass.append(x)
-                star.append(estrellass)
-                x+=1                   
-                return render_template("books.html", rows = rows, query_books = query_books, dato = dato, puntuacion = puntuacion, star=star,coment_stars= coment_stars)
+    if puntuacion is not None:
+        while(x <= puntuacion):
+                    estrellass = []
+                    estrellass.append(x)
+                    star.append(estrellass)
+                    x+=1                   
+                    return render_template("books.html", rows = rows, query_books = query_books, dato = dato, puntuacion = puntuacion, star=star,coment_stars= coment_stars)#Se muestra el resultado del libro buscado
     else: 
+        puntuacion = 0.0
+        while(x <= puntuacion):
+                    estrellass = []
+                    estrellass.append(x)
+                    star.append(estrellass)
+                    x+=1                   
+                    return render_template("books.html", rows = rows, query_books = query_books, dato = dato, puntuacion = puntuacion, star=star,coment_stars= coment_stars)#Se muestra el resultado del libro buscad
+    if len(dato) == 0: 
+        print(dato)
         puntuacion = 'No rating available'
         vistas = "No ratings"
         flash("Book information is not accessible")
-        return render_template("books.html", rows=rows,query_books = query_books, dato = dato,coment_stars = 0)
-        
+        return render_template("books.html", rows=rows,query_books = query_books, dato = dato,coment_stars = "None", star= star)
 
 @app.route('/register', methods=["GET", "POST"])
 def register():

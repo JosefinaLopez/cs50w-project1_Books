@@ -195,6 +195,7 @@ li:hover, i:hover{
 }
 #uwu{   
     top: 50px;
+    z-index: 9;
 }
 .log{
     text-align: center;
