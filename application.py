@@ -178,21 +178,23 @@ def book(isbn):
         #variables de la APi se agregan a un arreglo
 
         #Parte de los comentarios
+    star = []
     if request.method == 'POST':
         coment = request.form.get("comentario")    
         user = session["username"]
         stars = request.form.get("stars")
-
         verificar = db.execute(text("SELECT *From reviews WHERE username =:username"),{"username":session["username"]}).fetchone()
         print(verificar)
             
             #estrellas 
             #stars = []
+        print(coment, user, stars)
         if not coment:
                 flash("write a comment")
                 return render_template("books.html", rows = rows, query_books = query_books, dato = dato, puntuacion = puntuacion, star=star,coment_stars= coment_stars)
 
         elif not stars:
+                print('xd')
                 flash("Give a Score")
                 return render_template("books.html", rows = rows, query_books = query_books, dato = dato, puntuacion = puntuacion, star=star,coment_stars= coment_stars)
 
@@ -210,7 +212,7 @@ def book(isbn):
             flash("Comment Posted Successfully")
             return redirect('/books/' + isbn)        
         
-    star = []
+
     x = 1.0    
     if puntuacion is not None:
         while(x <= puntuacion):

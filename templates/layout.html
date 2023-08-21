@@ -8,7 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="/static/style.css">
     <link rel="shortcut icon" href="/static/img/libro.ico">
-    <title>{{title}}</title>
+    <!-- <title>{{title}}</title> -->
+    {% block title_page %}{% endblock %}
     <nav class="navbar bg-body-tertiary fixed-top">
       <div class="container-fluid">
         <a id='khe'  class="navbar-brand" href="#"> <img src="/static/img/libro.png" alt="" width="30"  height="24" class="d-inline-block align-text-top">BOOKS</a>
