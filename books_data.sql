@@ -17,6 +17,7 @@ CREATE TABLE reviews
     Id SERIAL PRIMARY KEY NOT NULL,
     stars INT NOT NULL,
     username VARCHAR(50) NOT NULL,
+    comments VARCHAR(70) NOT NULL,
     books_Id VARCHAR(30) NOT NULL REFERENCES Book(Isbn)
 )
 
