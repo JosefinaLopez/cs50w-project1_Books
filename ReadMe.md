@@ -23,6 +23,13 @@ puede hacerse una vez.
 ![Alt text](static/img-readme/image-5.png)
 ![Alt text](static/img-readme/image-6.png)
 
+## API 
+Para probar la API puede usar la ruta /api/ mas el isbn del libro, y
+le aparecera como respuesta un json con informacion del libro mas simplificada.
+`localhost/api/0375508325`
+
+![Alt text](static/img-readme/image-7.png)
+
 
 ### Nota 1
 Debido a que la base de datos esta alojada en render y aveces la conexion es un poco inestable, 

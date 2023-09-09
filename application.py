@@ -88,10 +88,10 @@ def result():
         return render_template("search.html")
 
         
-@app.route ("/api",methods=["GET"])
-def api():
+@app.route ("/api/<string:isbn>",methods=["GET"])
+def api(isbn):
 
-    isbn = request.args.get("isbn")
+    # isbn = request.args.get("isbn")
     rques = requests.get(f"https://www.googleapis.com/books/v1/volumes?q=isbn:{isbn}")
     if rques.status_code != 200:
         return jsonify({'error': 'book not found'}),404
@@ -116,7 +116,8 @@ def api():
             for book in book_info["items"]:
                 puntuacion = book['volumeInfo']['averageRating']
                 vistas =  book["volumeInfo"]["ratingsCount"]
-            return jsonify({'title': title,
+            return jsonify({
+                    'title': title,
                     'author': author,
                     'year':year,
                     'isbn':Isbn,
